@@ -1,0 +1,764 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essa Figma | UI/UX Designer & Figma Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        figmaDark: '#1E1E1E',
+                        figmaCard: '#2C2C2C',
+                        figmaBorder: '#3F3F3F',
+                        figmaAccent: '#0ACF83', // Figma Green
+                        figmaPurple: '#F24E1E', // Figma Orange/Red
+                        figmaBlue: '#1ABCFE',   // Figma Blue
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        .figma-gradient {
+            background: linear-gradient(135deg, #F24E1E 0%, #A259FF 35%, #1ABCFE 70%, #0ACF83 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #F24E1E 0%, #A259FF 50%, #1ABCFE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(30, 30, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: translateY(-4px);
+            border-color: #0ACF83;
+            box-shadow: 0 10px 25px -5px rgba(10, 207, 131, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#121212] text-gray-100 antialiased selection:bg-[#0ACF83] selection:text-black">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#121212]/80 backdrop-blur-md border-b border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl figma-gradient flex items-center justify-center shadow-lg transform group-hover:scale-105 transition duration-300">
+                    <span class="text-white font-bold text-xl">Ef</span>
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white block">Essa Figma</span>
+                    <span class="text-xs text-[#0ACF83] font-medium flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-[#0ACF83] animate-pulse"></span> Available for Hire
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#home" class="hover:text-[#0ACF83] transition">Home</a>
+                <a href="#about" class="hover:text-[#0ACF83] transition">About</a>
+                <a href="#skills" class="hover:text-[#0ACF83] transition">Skills</a>
+                <a href="#projects" class="hover:text-[#0ACF83] transition">Projects</a>
+                <a href="#services" class="hover:text-[#0ACF83] transition">Services</a>
+                <a href="#contact" class="hover:text-[#0ACF83] transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/923272100572" target="_blank" class="bg-[#0ACF83] hover:bg-[#08b873] text-black font-semibold px-5 py-2.5 rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-[#0ACF83]/20">
+                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1E1E1E] border-b border-[#2C2C2C] px-6 py-5 space-y-4">
+            <a href="#home" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">Home</a>
+            <a href="#about" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">About</a>
+            <a href="#skills" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">Skills</a>
+            <a href="#projects" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">Projects</a>
+            <a href="#services" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">Services</a>
+            <a href="#contact" class="block text-base font-medium hover:text-[#0ACF83] mobile-link">Contact</a>
+            <div class="pt-4 border-t border-[#2C2C2C]">
+                <a href="https://wa.me/923272100572" target="_blank" class="w-full bg-[#0ACF83] text-black font-semibold py-3 rounded-xl text-center flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp (+92 327 2100572)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F24E1E]/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#0ACF83]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2C2C2C] border border-[#3F3F3F] text-xs font-medium text-gray-300 shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-[#0ACF83]"></span>
+                        Available for Remote Work & Project-Based Work
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                        Hi, I'm Essa <span class="text-gradient">Figma</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-semibold text-gray-300">
+                        UI/UX Designer & Figma Specialist
+                    </p>
+                    <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Based in Karachi, Pakistan. I transform complex ideas into intuitive, pixel-perfect user interfaces, robust design systems, and engaging digital experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto bg-[#0ACF83] hover:bg-[#08b873] text-black font-bold px-8 py-4 rounded-xl transition shadow-lg shadow-[#0ACF83]/20 flex items-center justify-center gap-2">
+                            View My Work <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto bg-[#2C2C2C] hover:bg-[#383838] text-white border border-[#444] font-bold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">
+                            Hire Me
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-6 pt-6 text-sm text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-[#0ACF83]">></i> Karachi, PK
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-[#1ABCFE]"></i> essa.figma49@gmail.com
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1.5 figma-gradient rounded-3xl blur-xl opacity-40 animate-pulse"></div>
+                        <div class="relative glass-card p-8 rounded-3xl border border-[#3F3F3F] shadow-2xl">
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-[#3F3F3F]">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 font-mono">figma.com/@essafigma</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-[#1E1E1E] border border-[#333] flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-[#F24E1E]/20 text-[#F24E1E] flex items-center justify-center text-xl font-bold">
+                                        <i class="fa-brands fa-figma"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Component Architecture</h4>
+                                        <p class="text-xs text-gray-400">Design Systems & Auto Layout v5</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-[#1E1E1E] border border-[#333] flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-[#1ABCFE]/20 text-[#1ABCFE] flex items-center justify-center text-xl font-bold">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Interactive Prototyping</h4>
+                                        <p class="text-xs text-gray-400">Advanced Smart Animate</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-[#1E1E1E] border border-[#333] flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-[#0ACF83]/20 text-[#0ACF83] flex items-center justify-center text-xl font-bold">
+                                        <i class="fa-solid fa-mobile-screen"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">Responsive Web & App UI</h4>
+                                        <p class="text-xs text-gray-400">Pixel-Perfect Multi-device Layouts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#181818] border-t border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="absolute -inset-2 figma-gradient rounded-3xl blur-lg opacity-30"></div>
+                        <div class="relative bg-[#222] p-8 rounded-3xl border border-[#333]">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                                <i class="fa-solid fa-user-gear text-[#0ACF83]"></i> Professional Overview
+                            </h3>
+                            <ul class="space-y-4 text-sm text-gray-300">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-[#0ACF83] mt-1"></i>
+                                    <span>Specialized in creating scalable, tokenized Design Systems in Figma.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-[#0ACF83] mt-1"></i>
+                                    <span>Expert in user research analysis, structural wireframing, and interactive prototypes.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-[#0ACF83] mt-1"></i>
+                                    <span>Strong focus on accessibility, modern UI aesthetics, and developer handoff efficiency.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-check text-[#0ACF83] mt-1"></i>
+                                    <span>Available worldwide for remote collaborations and short/long-term projects.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-md bg-[#2C2C2C] text-[#0ACF83] text-xs font-semibold uppercase tracking-wider">
+                        About Me
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                        Crafting intuitive digital products with precision and passion.
+                    </h2>
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Hello! I am Essa, a dedicated UI/UX Designer and Figma Specialist based in Karachi, Pakistan. I bridge the gap between user needs and business goals through clean, impactful, and human-centric design.
+                    </p>
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        Whether you need a complete design system built from scratch, high-converting landing pages, sleek mobile application interfaces, or complex SaaS dashboards, I leverage advanced Figma workflows (Auto Layout, Variables, and Smart Animation) to deliver exceptional results ready for production.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 pt-4 border-t border-[#2C2C2C]">
+                        <div>
+                            <span class="block text-3xl font-extrabold text-[#0ACF83]">100%</span>
+                            <span class="text-xs text-gray-400">Figma Mastery</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-[#1ABCFE]">Remote</span>
+                            <span class="text-xs text-gray-400">Global Availability</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-[#F24E1E]">24/7</span>
+                            <span class="text-xs text-gray-400">Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-[#121212] border-t border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-block px-3 py-1 rounded-md bg-[#2C2C2C] text-[#0ACF83] text-xs font-semibold uppercase tracking-wider">
+                    Core Expertise
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Skills & Competencies</h2>
+                <p class="text-gray-400 text-base">Comprehensive mastery of modern UI/UX methodologies and advanced Figma workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-[#F24E1E]/15 text-[#F24E1E] flex items-center justify-center text-2xl">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Figma</h3>
+                        <p class="text-xs text-gray-400">Advanced Auto Layout & Variables</p>
+                    </div>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-[#0ACF83]/15 text-[#0ACF83] flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">UI Design</h3>
+                        <p class="text-xs text-gray-400">Visuals, Typography & Color Theory</p>
+                    </div>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-[#1ABCFE]/15 text-[#1ABCFE] flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">UX Design</h3>
+                        <p class="text-xs text-gray-400">User Flows & Information Architecture</p>
+                    </div>
+                </div>
+                <!-- Skill 4 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Wireframing</h3>
+                        <p class="text-xs text-gray-400">Low & High-Fidelity Structures</p>
+                    </div>
+                </div>
+                <!-- Skill 5 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-yellow-500/15 text-yellow-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Prototyping</h3>
+                        <p class="text-xs text-gray-400">Smart Animate & Micro-interactions</p>
+                    </div>
+                </div>
+                <!-- Skill 6 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/15 text-pink-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Design Systems</h3>
+                        <p class="text-xs text-gray-400">Reusable Components & Libraries</p>
+                    </div>
+                </div>
+                <!-- Skill 7 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Responsive Design</h3>
+                        <p class="text-xs text-gray-400">Adaptive Multi-breakpoint Layouts</p>
+                    </div>
+                </div>
+                <!-- Skill 8 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-green-500/15 text-green-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Mobile App UI</h3>
+                        <p class="text-xs text-gray-400">iOS & Android Human Guidelines</p>
+                    </div>
+                </div>
+                <!-- Skill 9 -->
+                <div class="skill-badge glass-card p-6 rounded-2xl border border-[#333] flex items-center gap-5">
+                    <div class="w-14 h-14 rounded-xl bg-orange-500/15 text-orange-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-lg">Web UI Design</h3>
+                        <p class="text-xs text-gray-400">Modern SaaS & E-Commerce Web Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-[#181818] border-t border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-block px-3 py-1 rounded-md bg-[#2C2C2C] text-[#0ACF83] text-xs font-semibold uppercase tracking-wider">
+                    Portfolio Showcase
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Featured Projects</h2>
+                <p class="text-gray-400 text-base">Selected UI/UX design case studies crafted in Figma.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-indigo-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-cart-shopping text-4xl text-[#1ABCFE] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">ShopSphere UI</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">E-Commerce</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">E-commerce Website UI</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">A modern, conversion-optimized multi-vendor shopping platform featuring lightning-fast product filtering and streamlined checkout workflows.</p>
+                        </div>
+                        <button onclick="openProjectModal('E-commerce Website UI', 'ShopSphere is a high-converting e-commerce web platform designed with a focus on user retention and frictionless checkouts. Built completely in Figma using Auto Layout components, dynamic variants, and a custom design system.', ['Figma', 'UI/UX', 'Design Systems', 'Responsive Design'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20E-commerce%20Website%20UI%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-emerald-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-wallet text-4xl text-[#0ACF83] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">NovaBank Mobile</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">Mobile App</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Mobile Banking App UI</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Secure, elegant fintech mobile application interface focusing on effortless fund transfers, expense tracking, and biometric authentication screens.</p>
+                        </div>
+                        <button onclick="openProjectModal('Mobile Banking App UI', 'NovaBank is a sleek fintech mobile app UI designed for iOS and Android platforms. It includes dark mode support, accessible financial charts, interactive bottom sheets, and smart prototype micro-interactions.', ['Figma', 'Mobile App UI', 'Prototyping', 'UX Design'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20Mobile%20Banking%20App%20UI%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-amber-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-utensils text-4xl text-[#F24E1E] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">Bistro & Bean</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">Web UI</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Restaurant Website UI</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Appetizing, immersive culinary landing page and online table reservation portal with stunning typography and high-end imagery layouts.</p>
+                        </div>
+                        <button onclick="openProjectModal('Restaurant Website UI', 'Bistro & Bean combines mouth-watering visual hierarchy with seamless table booking systems. Designed with responsive grids and interactive menu filtering in Figma.', ['Figma', 'UI Design', 'Web UI Design', 'Wireframing'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20Restaurant%20Website%20UI%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-blue-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-chart-line text-4xl text-[#1ABCFE] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">MetricFlow SaaS</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">Dashboard</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">SaaS Dashboard</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Comprehensive data analytics workspace equipped with customizable widgets, real-time metrics graphs, and modular sidebar navigation.</p>
+                        </div>
+                        <button onclick="openProjectModal('SaaS Dashboard', 'MetricFlow is a heavy-duty enterprise analytics dashboard built with modular design system components. It features complex data tables, toggleable filters, dark/light modes, and intuitive data visualization structures.', ['Figma', 'Design Systems', 'UI/UX', 'Dashboard Design'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20SaaS%20Dashboard%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-teal-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-house-chimney text-4xl text-[#0ACF83] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">UrbanNest Realty</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">Real Estate</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Real Estate Website</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Property listing portal featuring interactive map searches, advanced property filtering filters, and direct scheduling tour modals.</p>
+                        </div>
+                        <button onclick="openProjectModal('Real Estate Website', 'UrbanNest is a luxury real estate portal designed to simplify property discovery. Features immersive gallery layouts, agent booking forms, and responsive map-based search interfaces.', ['Figma', 'Web UI Design', 'Responsive Design', 'Wireframing'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20Real%20Estate%20Website%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="glass-card rounded-2xl border border-[#333] overflow-hidden flex flex-col group hover:border-[#0ACF83]/50 transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-rose-900 to-slate-900 relative p-6 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="text-center relative z-10 group-hover:scale-105 transition duration-500">
+                            <i class="fa-solid fa-dumbbell text-4xl text-[#F24E1E] mb-2"></i>
+                            <h4 class="text-white font-bold text-lg">PulseFitness App</h4>
+                        </div>
+                        <span class="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-[#0ACF83] text-xs font-semibold px-3 py-1 rounded-full border border-white/10">Fitness App</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Fitness App UI</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Workout tracking, calorie counting, and personal training mobile app interface with energetic branding and progress rings.</p>
+                        </div>
+                        <button onclick="openProjectModal('Fitness App UI', 'PulseFitness motivates users through clean data visualization, workout goal tracking rings, and personalized video workout plan screens crafted entirely in Figma.', ['Figma', 'Mobile App UI', 'Prototyping', 'UI/UX'], 'https://wa.me/923272100572?text=Hi%20Essa,%20I%20saw%20your%20Fitness%20App%20UI%20project%20and%20want%20to%20discuss%20similar%20work.')" class="w-full bg-[#2C2C2C] hover:bg-[#0ACF83] hover:text-black text-white font-semibold py-3 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                            View Project <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-[#121212] border-t border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-block px-3 py-1 rounded-md bg-[#2C2C2C] text-[#0ACF83] text-xs font-semibold uppercase tracking-wider">
+                    What I Offer
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional Services</h2>
+                <p class="text-gray-400 text-base">Tailored design solutions designed to elevate your brand and products.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-[#0ACF83]/15 text-[#0ACF83] flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Website UI/UX Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Modern, responsive, and conversion-focused website designs created from user research to final high-fidelity layouts.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-[#1ABCFE]/15 text-[#1ABCFE] flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mobile App UI Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Engaging iOS and Android mobile app interfaces built around native guidelines and smooth user journeys.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Figma Prototyping</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Interactive, clickable prototypes with smart animations that simulate real app behavior for testing and presentations.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-yellow-500/15 text-yellow-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Wireframing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Low-fidelity blueprints and structural user flows to validate information architecture before visual design.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-[#F24E1E]/15 text-[#F24E1E] flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Design System Creation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Scalable Figma design systems with components, tokens, variants, and documentation for seamless developer handoff.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="glass-card p-8 rounded-2xl border border-[#333] hover:border-[#0ACF83]/50 transition group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Dashboard Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Complex SaaS and analytics dashboard interfaces designed for clarity, efficiency, and heavy data management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#181818] border-t border-[#2C2C2C]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-md bg-[#2C2C2C] text-[#0ACF83] text-xs font-semibold uppercase tracking-wider">
+                        Get In Touch
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                        Let's Work Together
+                    </h2>
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        Have a project in mind, need a Figma expert, or want to discuss remote opportunities? Drop me a message or connect directly via WhatsApp or Email.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <a href="mailto:essa.figma49@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-[#222] border border-[#333] hover:border-[#0ACF83] transition">
+                            <div class="w-12 h-12 rounded-lg bg-[#1ABCFE]/15 text-[#1ABCFE] flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">Email Me</span>
+                                <span class="text-white font-semibold text-sm">essa.figma49@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:03272100572" class="flex items-center gap-4 p-4 rounded-xl bg-[#222] border border-[#333] hover:border-[#0ACF83] transition">
+                            <div class="w-12 h-12 rounded-lg bg-[#0ACF83]/15 text-[#0ACF83] flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">Call / SMS</span>
+                                <span class="text-white font-semibold text-sm">0327 2100572</span>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/923272100572" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-[#222] border border-[#333] hover:border-[#0ACF83] transition">
+                            <div class="w-12 h-12 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">WhatsApp Chat</span>
+                                <span class="text-white font-semibold text-sm">+92 327 2100572</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 sm:p-10 rounded-3xl border border-[#333]">
+                        <h3 class="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="name" required placeholder="Enter your full name" class="w-full bg-[#121212] border border-[#3F3F3F] rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#0ACF83] transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Email</label>
+                                <input type="email" id="email" required placeholder="name@example.com" class="w-full bg-[#121212] border border-[#3F3F3F] rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#0ACF83] transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Your Message</label>
+                                <textarea id="message" rows="4" required placeholder="Tell me about your project, timeline, and requirements..." class="w-full bg-[#121212] border border-[#3F3F3F] rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#0ACF83] transition text-sm"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#0ACF83] hover:bg-[#08b873] text-black font-bold py-4 rounded-xl transition shadow-lg shadow-[#0ACF83]/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0D0D0D] border-t border-[#222] py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pb-8 border-b border-[#222]">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl figma-gradient flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xl">Ef</span>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-white block">Essa Figma</span>
+                        <span class="text-xs text-gray-400">UI/UX Designer & Figma Specialist</span>
+                    </div>
+                </div>
+                <div class="text-center text-sm text-gray-400">
+                    <p class="font-medium text-gray-300">Karachi, Pakistan</p>
+                    <p class="text-xs text-[#0ACF83] mt-1">Remote & Project-Based Work Available</p>
+                </div>
+                <div class="flex items-center justify-center md:justify-end gap-4">
+                    <a href="https://wa.me/923272100572" target="_blank" class="w-10 h-10 rounded-xl bg-[#222] hover:bg-[#0ACF83] hover:text-black text-gray-300 flex items-center justify-center transition" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="mailto:essa.figma49@gmail.com" class="w-10 h-10 rounded-xl bg-[#222] hover:bg-[#1ABCFE] hover:text-black text-gray-300 flex items-center justify-center transition" title="Email">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </a>
+                    <a href="tel:03272100572" class="w-10 h-10 rounded-xl bg-[#222] hover:bg-[#0ACF83] hover:text-black text-gray-300 flex items-center justify-center transition" title="Phone">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 Essa Figma. All rights reserved.</p>
+                <div class="flex items-center gap-6 mt-4 sm:mt-0">
+                    <a href="#home" class="hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#home" class="hover:text-gray-300 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="glass-card max-w-xl w-full p-8 rounded-3xl border border-[#444] relative space-y-6">
+            <button onclick="closeProjectModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div>
+                <span id="modal-category" class="text-xs font-semibold px-3 py-1 rounded-full bg-[#0ACF83]/20 text-[#0ACF83] border border-[#0ACF83]/30"></span>
+                <h3 id="modal-title" class="text-2xl font-bold text-white mt-3"></h3>
+            </div>
+            <p id="modal-description" class="text-gray-300 text-sm leading-relaxed"></p>
+            <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+            <div class="pt-4 border-t border-[#333] flex items-center justify-end gap-4">
+                <button onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl bg-[#2C2C2C] hover:bg-[#383838] text-white text-sm font-semibold transition">Close</button>
+                <a id="modal-whatsapp-btn" href="#" target="_blank" class="px-6 py-2.5 rounded-xl bg-[#0ACF83] hover:bg-[#08b873] text-black text-sm font-bold transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Discuss This Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Modal functions
+        function openProjectModal(title, description, tags, whatsappUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-whatsapp-btn').href = whatsappUrl;
+            
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = '';
+            tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'text-xs px-3 py-1 rounded-lg bg-[#222] text-gray-300 border border-[#333]';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Contact Form Submission via WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const text = `Hi Essa,%0A%0AMy Name: ${encodeURIComponent(name)}%0AMy Email: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+            window.open(`https://wa.me/923272100572?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
